@@ -64,7 +64,9 @@ import reflex as rx
 # }
 
 #TESTING STYLES
-
+app = {
+    "width": "full"
+}
 
 text_style = {
     "color": "red"
@@ -72,14 +74,25 @@ text_style = {
 
 text_title_style = {
     "fontSize": "4rem",
-    "fontWeight": "bold"
+    "fontWeight": "bold",
+    "width": "full"
 }
 
 feed_content = {
-    "maxWidth": "50vw"
+    "minWidth": "50vw"
 }
 
 post_style = {
     "border-color": "black",
-    "borderWidth": "1px"
+    "borderWidth": "1px",
+    "width": "full",
+    "height": "20vw",
+    "borderRadius": "10",
+    "rowSpan": "5",
+    "templateRows": "repeat(4f, 1f)"
+}
+
+grid_post = {
+    "rowSpan": "5",
+    "templateRows": "repeat(4f, 1f)"
 }

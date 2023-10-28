@@ -27,7 +27,7 @@ def index() -> rx.Component:
     
 
     return rx.vstack(
-            rx.text("CalHacks_2023 WebApp", **styles.text_title_style),
+            rx.box(rx.text("CalHacks_2023 WebApp", **styles.text_title_style)),
             feed(feed_state),
-            
+            **styles.app
         )
