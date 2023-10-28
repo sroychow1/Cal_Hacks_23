@@ -7,10 +7,9 @@ import math
 
 import requests
 
+run_ids = []
+url = ""
 async def start():
-    load_dotenv()
-    url = os.getenv("GET_REQUEST_URL")
-    # print('url: ' + url)
     result = requests.get(url)
     
     if result == None:
@@ -30,5 +29,13 @@ async def start():
     await start()
     
 
-asyncio.run(start())
+def initialize_and_start():
+    load_dotenv()
+    global url
+    url = os.getenv("GET_REQUEST_URL")
+
+    
+    # asyncio.run(start())
+
+initialize_and_start()
 

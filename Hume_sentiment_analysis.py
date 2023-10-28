@@ -44,5 +44,5 @@ def mean_score(emotions):
             num_negative_emotions += 1
     return total_scores / num_negative_emotions
 
-score = asyncio.run(run_hume("programmers should get their heads chopped off"))
-print("score: " + str(score))
+# score = asyncio.run(run_hume("programmers should get their heads chopped off"))
+# print("score: " + str(score))
