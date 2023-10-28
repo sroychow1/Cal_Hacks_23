@@ -2,13 +2,15 @@ import reflex as rx
 from Cal_Hacks_23 import styles
 from Cal_Hacks_23.state import feedState
 from Cal_Hacks_23 import styles
+from Cal_Hacks_23.state import Post
+from typing import Dict
+import json
 
-def post(post) -> rx.Component: 
+def post(post_JSON: str) -> rx.Component: 
+    
+    post = json.loads(post_JSON)
+    
     return rx.box(
-        rx.text(post.id),
-        rx.text(post.text),
-        rx.text(post.link),
-        rx.text(post.yes_flag_count),
-        rx.text(post.no_flag_count),
+    
         rx.divider(**styles.box_style),
     )

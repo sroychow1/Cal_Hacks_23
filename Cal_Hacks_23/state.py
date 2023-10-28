@@ -1,5 +1,6 @@
 """Base state for the app."""
-from typing import List
+from typing import List, Dict
+import json
 
 import reflex as rx
 
@@ -17,17 +18,32 @@ class feedState(rx.State):
     The base state is used to store general vars used throughout the app.
     # """
 
-    # testPost = Post(id=1, text="testing TEXT", link="texting LINK", yes_flag_count=0, no_flag_count=0)
+    # post: Post = Post(id=1, text="testing TEXT", link="texting LINK", yes_flag_count=0, no_flag_count=0)
 
-    feed: list[Post] = []
+    curr_number: int = 0
+    feed: List[str] = []
+    # feed: List[List[str]] =  []
 
-    
+
     def add_post(self):
-        print("testing")
-        post = Post(id=1, text="testing TEXT", link="texting LINK", yes_flag_count=0, no_flag_count=0)
-        print(type(post))
-        # print(len(self.feed))
-        # print("Testing")
-        self.feed.append(post)
-        # print("Feed created")
+        print("add_post called")
+        # post = Post(id=self.curr_number, text="testing TEXT", link="texting LINK", yes_flag_count=0, no_flag_count=0)
+        self.curr_number += 1
+
+        post: Dict[str, str] = {
+            "id": self.curr_number,
+            "text": "testing Text",
+            "link": "testing Link",
+            "yes_flag_count": 0,
+            "no_flag_count": 0
+        }
+
+        post_JSON = str(post)
+
+        # post = [["some ID"]]
+
+        self.feed.append(post_JSON)
+
+
+
     
