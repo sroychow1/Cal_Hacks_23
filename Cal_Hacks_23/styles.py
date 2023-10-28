@@ -64,6 +64,8 @@ import reflex as rx
 # }
 
 #TESTING STYLES
+
+
 text_style = {
     "color": "red"
 }
@@ -73,6 +75,11 @@ text_title_style = {
     "fontWeight": "bold"
 }
 
-box_style = {
-    "border-color": "black"
+feed_content = {
+    "maxWidth": "50vw"
+}
+
+post_style = {
+    "border-color": "black",
+    "borderWidth": "1px"
 }

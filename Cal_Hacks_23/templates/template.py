@@ -77,7 +77,9 @@ def template(
             #     transition="left 0.5s, width 0.5s",
             #     position="relative",
             # )
-            return page_content()
+            return rx.container(
+                page_content()
+                )
 
         return templated_page
 
