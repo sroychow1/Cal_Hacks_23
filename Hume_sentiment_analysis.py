@@ -1,13 +1,18 @@
 import asyncio
+import os
+from dotenv import load_dotenv
 
 from hume import HumeStreamClient, StreamSocket
 from hume.models.config import LanguageConfig
+import random as Random
 
 
 negative_emotions = ["anger", "disgust", "fear", "sadness", "envy", "horror", "pain", "surprise (negative)"]
+load_dotenv()
+HUME_API_KEY = os.getenv("HUME_API_KEY")
 
 async def query_hume(text):
-    client = HumeStreamClient("1cJ51ZOtKPkG4GXbPjZoHESZOo2ou2IMTUS1lLBFgHa4pASm")
+    client = HumeStreamClient(HUME_API_KEY)
     config = LanguageConfig()
     async with client.connect([config]) as socket:
         # result = await socket.send_file("./test.text")
@@ -23,11 +28,12 @@ async def query_hume(text):
         # return 1;
         return negativity_score(dict)
 
+
 async def run_hume(text):
     return await query_hume(text)
     
 def negativity_score(emotions) -> float:
-    return mean_score(emotions);
+    return Random.randrange(0, 100, 1) / 100
 
 def convert_to_dict(emotions):
     dict = {}
