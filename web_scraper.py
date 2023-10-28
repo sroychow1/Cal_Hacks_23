@@ -1,7 +1,6 @@
 import os
 import asyncio
 from dotenv import load_dotenv
-from bs4 import BeautifulSoup
 import Hume_sentiment_analysis as hume
 import math
 import firebase_helper as fb
