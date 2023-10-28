@@ -23,7 +23,7 @@ async def start():
         tweet = data[i]
         text = tweet["text"]
         score = await hume.run_hume(text)
-        print("score: " + str(score) + " text: " + text)
+        print("score: " + str(score) + " text: \"" + text + "\"")
     
 
 asyncio.run(start())
