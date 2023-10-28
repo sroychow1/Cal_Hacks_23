@@ -4,11 +4,12 @@ from Cal_Hacks_23 import styles
 from Cal_Hacks_23.templates import template
 from Cal_Hacks_23.components.post import post
 from Cal_Hacks_23.components.feed import feed
+from Cal_Hacks_23.state import feedState
 
 import reflex as rx
 
 
-@template(route="/", title="Home", image="/github.svg")
+@template(route="/", title="CalHacks2023 App", image="/github.svg")
 def index() -> rx.Component:
     """The home page.
 
@@ -18,7 +19,14 @@ def index() -> rx.Component:
     # with open("README.md", encoding="utf-8") as readme:
     #     content = readme.read()
     # return rx.markdown(content, component_map=styles.markdown_style)
-    
+
+    # for i in range(5):
+    #     # print(i)
+    #     feedState.add_post()
+    #     # print("LEN: ", len(feedState.feed))
+    #     # print(feedState.feed[i])
+
     return rx.vstack(
-            feed()
+            rx.text("CalHacks_2023 WebApp", **styles.text_title_style),
+            feed(),
         )

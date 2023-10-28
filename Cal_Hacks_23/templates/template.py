@@ -7,7 +7,7 @@ from typing import Callable
 
 import reflex as rx
 
-# Meta tags for the app.
+# Meta tags for the app.    
 default_meta = [
     {
         "name": "viewport",
@@ -17,7 +17,7 @@ default_meta = [
 
 
 def template(
-    route: str | None = None,
+    route: str | None = None,  
     title: str | None = None,
     image: str | None = None,
     description: str | None = None,

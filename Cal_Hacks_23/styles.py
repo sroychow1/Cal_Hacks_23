@@ -67,3 +67,12 @@ import reflex as rx
 text_style = {
     "color": "red"
 }
+
+text_title_style = {
+    "fontSize": "4rem",
+    "fontWeight": "bold"
+}
+
+box_style = {
+    "border-color": "black"
+}
