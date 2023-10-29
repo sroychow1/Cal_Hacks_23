@@ -31,3 +31,16 @@ async def get_last_run_id():
 async def set_last_run_id(id):
     doc_ref = db.collection("runs").document("last")
     doc_ref.set({"id": id})
+
+def upload_tweet_w_params(id, url, timestamp, text, isQuote, isRetweet, likes, replies, retweets, quotes, user, images=None):
+    tweet_json = {"id": id, "url": url, "timestamp": timestamp, "text": text, "isQuote": isQuote, "isRetweet": isRetweet, "likes": likes, "replies": replies, "retweets": retweets, "quotes": quotes, "user": user}
+    
+    if (images != None):
+        tweet_json["images"] = images
+        # print("added images")
+
+    tweet_id = id
+    doc_ref = db.collection("tweets").document(tweet_id)
+    doc_ref.set(tweet_json)
+
+# upload_tweet_w_params("123456789123456", 'www.google.com', '2020-01-01', 'This is a test tweet', False, False, 1, 0, 100, 0, {'username': 'test_user'}, ['www.google.com', 'www.google.com', 'www.google.com'])

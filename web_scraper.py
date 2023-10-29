@@ -23,7 +23,8 @@ async def start():
         return
     
     data = result.json()
-    # print(data[0]["text"])
+    # print(data)
+    # print(data[0])
 
     negative_tweets_indices = []
     # data = data[:3]
